@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    include: db
+  jpa:
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: true
+        ddl-auto: update
+    open-in-view: false
+    generate-ddl: true

@@ -1,6 +1,6 @@
 package com.smell.url.service;
 
-import com.smell.url.component.Base62;
+import com.smell.url.util.Base62;
 import com.smell.url.domain.dto.ShortenUrlCreateRequest;
 import com.smell.url.domain.dto.ShortenUrlResponse;
 import com.smell.url.domain.entity.ShortenUrl;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -38,20 +37,15 @@ public class ShortenUrlService {
         return shortenUrl.toShortenUrlResponse();
     }
 
-    private String makeShortUrl(String url) {
-        // TODO Algorithm
-        Integer id = shortenUrlRepository.findByOriginUrl(url);
-        if(id == null) shortenUrlRepository.updateOriginUrl(url);
-
-        return Base62.encoding(id);
+    private String makeShortUrl(Long index) {
+        return base62Util.encoding(index);
     }
 
 
 
-    private String makeOriginUrl(String url){
-        Integer id = Base62.decoding(url);
-        String originUrl = shortenUrlRepository.findOriginUrlByShortUrl(url);
-        return originUrl;
+    private Long makeOriginUrl(String shortenUrl){
+        Long id = base62Util.decoding(shortenUrl);
+        return id;
     }
 
 

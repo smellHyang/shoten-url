@@ -1,4 +1,4 @@
-package com.smell.url.component;
+package com.smell.url.util;
 
 import org.springframework.stereotype.Component;
 
@@ -7,7 +7,7 @@ public class Base62 {
 
     private static final String BASE62 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-    public static String encoding(int number){
+    public static String encoding(Long number){
         StringBuilder sb = new StringBuilder();
 
         while(number > 0){
@@ -18,7 +18,7 @@ public class Base62 {
 
     }
 
-    public static int decoding(String shorten){
+    public static long decoding(String shorten){
         int sum = 0;
         int power = 1;
         for(int i = 0; i < shorten.length(); i++){
