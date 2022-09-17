@@ -1,4 +1,4 @@
-# shoten-url
+# Short Link Management
 
 ## 사용 기술 및 환경
 
