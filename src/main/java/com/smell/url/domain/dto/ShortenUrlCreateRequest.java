@@ -1,6 +1,9 @@
 package com.smell.url.domain.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  *  shorten url 생성 Request

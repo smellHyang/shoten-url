@@ -1,10 +1,16 @@
 server:
   port: 8080
 spring:
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false
+  redis:
+    host: localhost
+    port: 6379
   cache:
     type: ehcache
     ehcache:
-      config: classpath:/ehcache.xml
+      config: classpath:ehcache.xml
   profiles:
     include: db
   jpa:

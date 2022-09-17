@@ -1,13 +1,9 @@
 package com.smell.url;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.smell.url.domain.dto.ShortenUrlCreateRequest;
-import com.smell.url.domain.dto.ShortenUrlResponse;
 import com.smell.url.service.ShortenUrlService;
 import org.junit.Test;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +11,12 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultMatcher;
-
 import org.springframework.transaction.annotation.Transactional;
-
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -55,7 +49,6 @@ public class ShortenUrlIntegrationTest {
                 )
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("data").hasJsonPath())
-                //.andExpect(jsonPath("shortId").isString())
                 .andDo(print())
                 .andReturn()
                 .getResponse()

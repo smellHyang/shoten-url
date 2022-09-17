@@ -1,11 +1,9 @@
 package com.smell.url.controller;
 
-import com.smell.url.common.CommonResponse;
 import com.smell.url.domain.dto.ShortenUrlCreateRequest;
 import com.smell.url.domain.dto.ShortenUrlResponse;
 import com.smell.url.service.ShortenUrlService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +24,6 @@ public class ShortenUrlController {
     }
 
     //Short Link 1개를 조회하는 API 개발
-
     @GetMapping("/short-links/{short_id}")
     public ResponseEntity<Map<String, ShortenUrlResponse>> getShortenUrl(@PathVariable(value = "short_id") String shortenUrl){
         ShortenUrlResponse shortenUrlResponse = shortenUrlService.getShortenUrl(shortenUrl);

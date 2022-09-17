@@ -23,7 +23,7 @@ public class Base62 {
         int power = 1;
         for(int i = 0; i < shorten.length(); i++){
             sum += BASE62.indexOf(shorten.charAt(i)) * power;
-            power += 62;
+            power *= 62;
         }
         return sum;
     }
