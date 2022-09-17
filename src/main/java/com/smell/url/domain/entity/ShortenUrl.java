@@ -19,14 +19,22 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @RequiredArgsConstructor
+@SequenceGenerator(
+        name = "SHORTEN_URL_ID_GENERATOR",
+        sequenceName = "ENTITY_SEQUENCES",
+        initialValue = 3844)
 public class ShortenUrl {
-    @Id
+
+    @Id @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SHORTEN_URL_ID_GENERATOR")
     @Column(unique = true)
     private Long id;
+
+    private String shortId;
     private String url;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime createdAt;
+
 
     public void updateShortUrl(String shortId) {
         this.shortId = shortId;

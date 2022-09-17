@@ -1,11 +1,14 @@
 package com.smell.url.domain.dto;
 
-import lombok.Getter;
+import lombok.*;
 
 /**
  *  shorten url 생성 Request
  * */
-@Getter
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class ShortenUrlCreateRequest {
     public String url;
 }

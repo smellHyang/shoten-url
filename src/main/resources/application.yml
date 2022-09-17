@@ -1,12 +1,16 @@
 server:
   port: 8080
 spring:
+  cache:
+    type: ehcache
+    ehcache:
+      config: classpath:/ehcache.xml
   profiles:
     include: db
   jpa:
     properties:
       hibernate:
-        show_sql: false
+        show_sql: true
         format_sql: true
         ddl-auto: update
     open-in-view: false

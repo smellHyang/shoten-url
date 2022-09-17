@@ -7,7 +7,7 @@ import com.smell.url.domain.dto.ShortenUrlCreateRequest;
 import com.smell.url.domain.dto.ShortenUrlResponse;
 import com.smell.url.service.ShortenUrlService;
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +15,14 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultMatcher;
+
 import org.springframework.transaction.annotation.Transactional;
+
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -51,8 +54,8 @@ public class ShortenUrlIntegrationTest {
                         .contentType("application/json")
                 )
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("url").isString())
-                .andExpect(jsonPath("shortId").isString())
+                .andExpect(jsonPath("data").hasJsonPath())
+                //.andExpect(jsonPath("shortId").isString())
                 .andDo(print())
                 .andReturn()
                 .getResponse()
