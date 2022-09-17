@@ -2,9 +2,7 @@
 
 ## 사용 기술 및 환경
 
-- Spring boot
-- Mysql
-- Redis
+<img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=plastic&logo=Springboot&logoColor=white"/> <img src="https://img.shields.io/badge/MySql-4479A1?style=plastic&logo=MySql&logoColor=white"> <img src="https://img.shields.io/badge/JAVA11-F7901E?style=plastic&logo=Java&logoColor=white"/> <img src="https://img.shields.io/badge/Redis-#DC382D?style=plastic&logo=Redis&logoColor=white"/>
 
 ## 개요
 - 긴 Url을 Short Link형태로 만들어주는 API 개발
