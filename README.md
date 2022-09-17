@@ -17,3 +17,13 @@
 ## API Document
 [AB180 ShortenUrl API 보러가기](https://documenter.getpostman.com/view/20884244/2s7YmonTiQ)
 
+## 고려사항
+
+대용량 데이터가 들어온다고 가정하여 부하분산 처리
+
+- Paritioning
+    - 키를 이용하여 객체를 저장하는 Hash Partitioning 고려
+- Cache
+    - 자주 접근하는 URL에 캐시기능을 넣어 DB에 접근하기 전에 캐시에서 먼저 데이터 확인 → 서버 Scale Out
+    ![image](https://user-images.githubusercontent.com/73684562/190849443-ce190978-dc90-47e8-ba9e-f1a35f77751b.png)
+
