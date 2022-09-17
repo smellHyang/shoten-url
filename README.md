@@ -20,7 +20,10 @@
 ## 고려사항
 
 대용량 데이터가 들어온다고 가정하여 부하분산 처리
-
+- Base62알고리즘 사용
+    - MD5, SHA-1와 같은 Hash Function은 암호화 결과값이 길게 나타낸다. 또한 알파벳 소문자 + 숫자의 조합이므로 해당 알고리즘은 길이가 짧은 Short Link를 만드는데 부적합.
+    - Base62문자표에서 +, /, = 3개의 문자표가 추가된 것이 Base64인데 URL에는 해당 3개의 문자표가 포함되어 나타내어 진다
+    - 따라서 해당 문자를 포함하여 사용할 경우 문자가 변경될 우려가 있어 해당 문자표를 제외한 Base62로 알고리즘을 선택
 - Paritioning
     - 키를 이용하여 객체를 저장하는 Hash Partitioning 고려
 - Cache
@@ -28,5 +31,6 @@
     ![image](https://user-images.githubusercontent.com/73684562/190849443-ce190978-dc90-47e8-ba9e-f1a35f77751b.png)
     
 ## 기록
+https://smelllee.tistory.com/86
 
 
