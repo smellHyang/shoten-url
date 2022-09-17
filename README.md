@@ -15,5 +15,5 @@
 ![image](https://user-images.githubusercontent.com/73684562/190848517-d7489e9d-78d9-430f-a2ef-e0a30a9f12d7.png)
 
 ## API Document
-[AB180 ShortenUrl API Link](https://documenter.getpostman.com/view/20884244/2s7YmonTiQ)
+[AB180 ShortenUrl API 보러가기](https://documenter.getpostman.com/view/20884244/2s7YmonTiQ)
 
