@@ -26,4 +26,7 @@
 - Cache
     - 자주 접근하는 URL에 캐시기능을 넣어 DB에 접근하기 전에 캐시에서 먼저 데이터 확인 → 서버 Scale Out
     ![image](https://user-images.githubusercontent.com/73684562/190849443-ce190978-dc90-47e8-ba9e-f1a35f77751b.png)
+    
+## 기록
+
 
